@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(File::class);
     }
+    public function sharedFiles()
+    {
+        return $this->belongsToMany(File::class, 'file_user');
+    }
+    
 }
