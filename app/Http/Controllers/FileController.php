@@ -27,7 +27,7 @@ class FileController extends Controller
             'path' => $path
         ]);
     
-        return back()->with('success', 'Fichier envoyer avec successfully.');
+        return back()->with('success', 'Fichiers envoyés avec successfully.');
     }
     public function download(File $file)
     {

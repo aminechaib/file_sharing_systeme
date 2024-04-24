@@ -34,7 +34,6 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index')->mid
 
 Route::get('/files/shared-with-me', [FileController::class, 'sharedWithMe'])->name('files.shared');
 Route::get('/files/download/{file}', [FileController::class, 'download'])->name('files.download');
-
 Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/dashboard', [FileController::class, 'index'])->name('dashboard');
     Route::post('/upload', [FileController::class, 'upload'])->name('file.upload');

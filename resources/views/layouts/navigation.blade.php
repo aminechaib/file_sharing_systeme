@@ -17,7 +17,7 @@
                         {{ __('Boite de reception') }}
                     </x-nav-link>
                     <x-nav-link :href="route('files.sent')" :active="request()->routeIs('files.sent')">
-                        {{ __('Messages envoyées') }}
+                        {{ __('Fichiers envoyés') }}
                     </x-nav-link>
                 </div>
             </div>

@@ -17,46 +17,47 @@
     
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('SarlPro Partage') }}
-        </h2>
+        </h2> --}}
+        <!-- Trigger/Button -->
+        <button type="button" class="button-17" data-toggle="modal" data-target="#fileUploadModal">
+            Envoyer un fichier
+        </button>
     </x-slot>
 
-<!-- Files Sent Table -->
-<div class="mt-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">Files Sent</h3>
-    <table class="min-w-full divide-y divide-gray-200 mt-4">
-        <thead class="bg-gray-50">
-            <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Fichier
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    To
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Date
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Actions
-                </th>
-            </tr>
-        </thead>
+
+    
+
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Data Table -->
+        <div class="mt-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Fichier
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            A
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Date
+                        </th>
+                    </tr>
+                </thead>
         <tbody class="bg-white divide-y divide-gray-200">
             @forelse ($sentFiles as $file)
                 <tr>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        {{ $file->filename }}
+                        <a href="{{ route('files.download', $file->id) }}" class="text-indigo-600 hover:text-indigo-900">{{ $file->filename }}</a>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         {{ $file->recipient->name ?? 'Unknown' }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         {{ $file->updated_at->format('F j, Y, g:i a') }}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="{{ route('files.download', $file->id) }}" class="text-indigo-600 hover:text-indigo-900">Download</a>
-                    </td>
+                    </td>                 
                 </tr>
             @empty
                 <tr>
