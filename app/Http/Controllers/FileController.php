@@ -27,7 +27,7 @@ class FileController extends Controller
             'path' => $path
         ]);
     
-        return back()->with('success', 'File sent successfully.');
+        return back()->with('success', 'Fichier envoyer avec successfully.');
     }
     public function download(File $file)
     {
@@ -46,6 +46,18 @@ class FileController extends Controller
     
     public function index(Request $request)
 {
+     // Fetch received files
+     $receivedFiles = File::where('recipient_id', Auth::id())
+     ->orderBy($request->input('sort', 'updated_at'), $request->input('order', 'desc'))
+     ->get();
+
+// Fetch sent files
+$sentFiles = File::where('user_id', Auth::id())
+ ->orderBy($request->input('sort', 'updated_at'), $request->input('order', 'desc'))
+ ->get();
+
+
+
     $query = File::query();
 
     if ($request->has('search')) {
@@ -56,6 +68,15 @@ class FileController extends Controller
                    ->orderBy($request->input('sort', 'updated_at'), $request->input('order', 'desc'))
                    ->get();
 
-    return view('dashboard', compact('files'));
+    return view('dashboard', compact('receivedFiles', 'sentFiles','files'));
 }
+public function showSentFiles()
+{
+    $sentFiles = File::where('user_id', Auth::id())
+                     ->orderBy('updated_at', 'desc')
+                     ->get();
+
+    return view('sent-files', compact('sentFiles'));  // Assuming the view file is sent-files.blade.php
+}
+
 }
