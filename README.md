@@ -1,3 +1,6 @@
+<div align="center">
+    <img src="public/logo.png" alt="Background Image" style="width: 100%; height: auto;">
+</div>
 # AC Share
 
 ![AC Share Logo](public/logo.png)
