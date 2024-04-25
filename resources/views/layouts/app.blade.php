@@ -34,6 +34,9 @@
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
+                            <button type="button" class="button-17" data-toggle="modal" data-target="#fileUploadModal">
+            Envoyer un fichier
+        </button>      
                     </div>
                 </header>
             @endif
@@ -54,6 +57,7 @@
                 $('table').DataTable(); // Adjust selector as needed
             });
         </script>
+        
         <style>
             .button-17 {
               align-items: center;
