@@ -58,3 +58,19 @@ Step by step guide to setting up your local development environment:
    php artisan serve
 
 Access the application through the web browser at: http://localhost:8000.
+
+## Screenshots
+
+Below are some screenshots that illustrate the AC Share interface and functionalities:
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### File Upload
+
+![File Upload](screenshots/file_upload.png)
+
+### File Management
+
+![Success Msg](screenshots/success_msg.png)
