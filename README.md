@@ -32,3 +32,29 @@ Step by step guide to setting up your local development environment:
 
    ```bash
    git clone https://github.com/yourusername/file_sharing_systeme.git
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd file_sharing_systeme
+3. **Install dependencies:**
+
+   ```bash
+   composer install
+4. **Create and configure your environment file:Copy the .env.example file to .env and open it to modify the database and other environment settings:**
+
+   ```bash
+   cp .env.example .env
+5. **Generate an application key:**
+
+   ```bash
+   php artisan key:generate
+6. **Run database migrations (it includes seed data):**
+
+   ```bash
+   php artisan migrate
+7. **Serve the application:**
+
+   ```bash
+   php artisan serve
+
+Access the application through the web browser at: http://localhost:8000.
