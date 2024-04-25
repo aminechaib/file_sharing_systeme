@@ -71,6 +71,6 @@ Below are some screenshots that illustrate the AC Share interface and functional
 
 ![File Upload](screenshots/file_upload.png)
 
-### File Management
+### Success Msg
 
 ![Success Msg](screenshots/success_msg.png)
