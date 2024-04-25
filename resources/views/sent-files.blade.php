@@ -18,6 +18,9 @@
 <x-app-layout>
     <x-slot name="header">
         <!-- Trigger/Button -->
+        <button type="button" class="button-17" data-toggle="modal" data-target="#fileUploadModal">
+            Envoyer un fichier
+        </button>   
     </x-slot>
 
 

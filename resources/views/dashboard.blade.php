@@ -17,7 +17,9 @@
     
 <x-app-layout>
     <x-slot name="header">
-
+        <button type="button" class="button-17" data-toggle="modal" data-target="#fileUploadModal">
+            Envoyer un fichier
+        </button>   
     </x-slot>
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <!-- Data Table -->
