@@ -31,7 +31,7 @@ Step by step guide to setting up your local development environment:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/file_sharing_systeme.git
+   git clone https://github.com/aminechaib/file_sharing_systeme.git
 2. **Navigate to the project directory:**
 
    ```bash
