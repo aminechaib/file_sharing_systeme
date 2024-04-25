@@ -1,5 +1,3 @@
-![Alt text](url)
-
 # AC Share
 
 ![AC Share Logo](public/logo.png)
