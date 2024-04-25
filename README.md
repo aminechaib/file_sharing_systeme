@@ -57,6 +57,8 @@ Step by step guide to setting up your local development environment:
    ```bash
    npm install vite --save-dev
 
+   npm run build
+
    php artisan serve
 
 Access the application through the web browser at: http://localhost:8000.
