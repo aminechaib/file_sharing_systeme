@@ -57,6 +57,7 @@ Step by step guide to setting up your local development environment:
 7. **Serve the application:**
 
    ```bash
+   npm run build
    php artisan serve
 
 Access the application through the web browser at: http://localhost:8000.
